@@ -1,10 +1,13 @@
-language: minimal
+language: node_js
+node_js:
+  - 13
 
 services:
   - docker
 
-env:
-    - DOCKER_COMPOSE_VERSION=1.23.2
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
 
 before_install:
 
@@ -17,8 +20,9 @@ before_install:
     - chmod +x ./kubectl
     - sudo mv ./kubectl /usr/local/bin/kubectl
 
+# Pre-testing installs
 install:
-    - docker-compose -f deployment/docker/docker-compose-build.yaml build --parallel
+  - echo "nothing needs to be installed"
 
 script:
   - docker --version # print the version for logging
