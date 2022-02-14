@@ -23,16 +23,16 @@ install:
 script:
   - docker --version # print the version for logging
 
-  - docker build -t udagram-api-feed api-feed
+  - docker build -t udagram-api-feed 
   - docker tag udagram-api-feed echobrook/udagram-api-feed:latest
 
-  - docker build -t udagram-ui ui
-  - docker tag udagram-ui echobrook/udagram-ui:latest
+  - docker build -t udagram-frontend 
+  - docker tag udagram-frontend echobrook/udagram-frontend:latest
 
-  - docker build -t udagram-api-user api-user
+  - docker build -t udagram-api-user 
   - docker tag udagram-api-user echobrook/udagram-api-user:latest
   
-  - docker build -t udagram-reverse-roxy deployment/docker
+  - docker build -t udagram-reverseproxy 
   - docker tag udagram-reverseproxy echobrook/udagram-reverseproxy:latest
 
 after_success:
