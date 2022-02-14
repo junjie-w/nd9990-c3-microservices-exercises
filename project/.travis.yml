@@ -20,5 +20,5 @@ script:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push olenairy/reverse-proxy
+  - docker push echobrook/reverse-proxy
 
