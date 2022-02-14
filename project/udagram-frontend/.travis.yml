@@ -15,9 +15,10 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t user-api .
-  - docker tag user-api echobrook/user-api:latest
+  - docker build -t udagram-frontend .
+  - docker tag udagram-frontend echobrook/udagram-frontend:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push echobrook/user-api
+  - docker push echobrook/udagram-frontend
+
