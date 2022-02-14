@@ -84,3 +84,15 @@ Launch the frontend app locally.
     ```
 4. `set_env.sh` is really for your backend application. Frontend applications have a different notion of how to store configurations. Configurations for the application endpoints can be configured inside of the `environments/environment.*ts` files.
 5. In `set_env.sh`, environment variables are set with `export $VAR=value`. Setting it this way is not permanent; every time you open a new terminal, you will have to run `set_env.sh` to reconfigure your environment variables. To verify if your environment variable is set, you can check the variable with a command like `echo $POSTGRES_USERNAME`.
+
+
+<!-- 
+- docker build -t udagram-api-reverseproxy ./udagram-reverseproxy
+- docker build -t udagram-api-feed ./udagram-api-feed    
+- docker build -t udagram-api-frontend ./udagram-frontend
+- docker build -t udagram-api-user ./udagram-reverseproxy
+- docker tag udagram-frontend echobrook/udagram-frontend:v1 
+- docker tag udagram-reverseproxy echobrook/udagram-reverseproxy:v1
+- docker tag udagram-api-user echobrook/udagram-api-user:v1
+- docker tag udagram-api-feed echobrook/udagram-api-feed:v1 
+ -->
